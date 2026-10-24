@@ -81,7 +81,7 @@ if [ "$CHART_REPO_URL" != "http://0.0.0.0:8090" ]; then
 fi
 
 sudo ./install_scripts/run_chart_museum.sh
-sudo ./install_scripts/run_e2sim_and_connect_to_ric.sh
+# sudo ./install_scripts/run_e2sim_and_connect_to_ric.sh
 
 echo
 echo "Running the xApp Onboarder (dms_cli)..."
