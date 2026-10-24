@@ -444,7 +444,7 @@ sudo ./install_scripts/wait_for_ricplt_pods.sh
 # sudo ./install_scripts/run_e2sim_and_connect_to_ric.sh
 
 echo "Restoring ownership of directories and files created while in root..."
-sudo chown "${SUDO_USER:-$USER}" logs/e2sim_output.txt
+sudo chown "${SUDO_USER:-$USER}" logs/e2sim_output.txt || true
 sudo chown --recursive "${SUDO_USER:-$USER}" charts || true
 
 echo
