@@ -40,6 +40,16 @@ if ! command -v realpath &>/dev/null; then
     sudo env $APTVARS apt-get install -y coreutils
 fi
 
+if ! command -v bc &>/dev/null; then
+    echo "Package \"bc\" not found, installing..."
+    sudo env $APTVARS apt-get install -y bc
+fi
+
+if ! command -v file &>/dev/null; then
+    echo "Package \"file\" not found, installing..."
+    sudo env $APTVARS apt-get install -y file
+fi
+
 CURRENT_DIR=$(pwd)
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 cd "$SCRIPT_DIR"
