@@ -109,7 +109,7 @@ fi
 if [ ! -d dep ]; then
     echo
     echo "Cloning Non-RT RIC dependencies..."
-    ./install_scripts/git_clone.sh https://github.com/gunboss/it-dep.git --https
+    ./install_scripts/git_clone.sh https://github.com/gunboss/it-dep.git dep --https
     cd dep # Ensure that the components are cloned
     git restore --source=HEAD :/
     cd ..

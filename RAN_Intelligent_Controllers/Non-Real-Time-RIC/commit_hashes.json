@@ -1,7 +1,7 @@
 {
-  "https://github.com/gunboss/ric-plt-ric-dep.git": ["m-release", "348562bc2adad5c9e6f8a114db2cbfc469be710a"],
+  "https://github.com/gunboss/ric-plt-ric-dep.git": ["", "gpak/m-release"],
   "https://gerrit.o-ran-sc.org/r/ric-plt/appmgr.git": ["m-release", "b8bdc7bd6931461b7a237ab2cad278bc87ba110e"],
-  "https://github.com/gunboss/it-dep.git": ["m-release", "1daedf545ec1b5f6d4a7740c49ea44d80459f24c"],
+  "https://github.com/gunboss/it-dep.git": ["", "gpak/m-release"],
   "https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git": ["l-release", "f0ef45cb96961334b9525c546534b822f055e24c"],
   "https://github.com/onap/multicloud-k8s.git": ["", "a3c6f080e9a015c7aab0d351af3864f239fb2931"],
   "https://gerrit.onap.org/r/oom.git": ["", "2214f66e9d9f757239d0297353d9194f782e9eac"],
