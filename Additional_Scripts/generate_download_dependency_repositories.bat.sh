@@ -197,7 +197,7 @@ echo "cd .." >>download_dependency_repositories.bat
 
 echo "cd ..\\.." >>download_dependency_repositories.bat
 echo "" >>download_dependency_repositories.bat
-generate_commands "https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git" "RAN_Intelligent_Controllers\\Near-Real-Time-RIC" "ric-dep"
+generate_commands "https://github.com/gunboss/ric-plt-ric-dep.git" "RAN_Intelligent_Controllers\\Near-Real-Time-RIC" "ric-dep"
 generate_commands "https://gerrit.o-ran-sc.org/r/sim/e2-interface.git" "RAN_Intelligent_Controllers\\Near-Real-Time-RIC" "e2-interface"
 generate_commands "https://gerrit.o-ran-sc.org/r/ric-plt/appmgr.git" "RAN_Intelligent_Controllers\\Near-Real-Time-RIC" "appmgr"
 
@@ -216,10 +216,10 @@ generate_commands "https://gerrit.o-ran-sc.org/r/ric-app/rc.git" "RAN_Intelligen
 generate_commands "https://gerrit.o-ran-sc.org/r/ric-app/ts.git" "RAN_Intelligent_Controllers\\Near-Real-Time-RIC\\xApps" "ts"
 
 # O-RAN SC Non-RT RIC repositories
-generate_commands "https://gerrit.o-ran-sc.org/r/it/dep.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC" "dep"
+generate_commands "https://github.com/gunboss/it-dep.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC" "dep"
 generate_commands "https://gerrit.o-ran-sc.org/r/nonrtric/plt/rappmanager.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC" "rappmanager"
 generate_commands "https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep" "ranpm"
-generate_commands "https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep" "ric-dep"
+generate_commands "https://github.com/gunboss/ric-plt-ric-dep.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep" "ric-dep"
 generate_commands "https://github.com/onap/multicloud-k8s.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep\\smo-install" "multicloud-k8s"
 generate_commands "https://gerrit.onap.org/r/oom.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep\\smo-install" "onap_oom"
 generate_commands "https://gerrit.o-ran-sc.org/r/portal/nonrtric-controlpanel.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC" "nonrtric-controlpanel"

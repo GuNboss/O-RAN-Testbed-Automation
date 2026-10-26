@@ -147,7 +147,7 @@ cd %~dp0..
 if exist "RAN_Intelligent_Controllers\Near-Real-Time-RIC\ric-dep" rmdir /s /q "RAN_Intelligent_Controllers\Near-Real-Time-RIC\ric-dep"
 cd "RAN_Intelligent_Controllers\Near-Real-Time-RIC" >nul 2>&1
 if not errorlevel 1 (
-    git clone https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git
+    git clone https://github.com/gunboss/ric-plt-ric-dep.git
     cd "ric-dep"
     git checkout d9298b0865b69847c2ed0885f5077e703e5a6638
     cd ..\..\..
@@ -291,7 +291,7 @@ cd %~dp0..
 if exist "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep" rmdir /s /q "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep"
 cd "RAN_Intelligent_Controllers\Non-Real-Time-RIC" >nul 2>&1
 if not errorlevel 1 (
-    git clone https://gerrit.o-ran-sc.org/r/it/dep.git
+    git clone https://github.com/gunboss/it-dep.git
     cd "dep"
     git checkout 1daedf545ec1b5f6d4a7740c49ea44d80459f24c
     git restore --source=HEAD :/
@@ -328,7 +328,7 @@ cd %~dp0..
 if exist "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep\ric-dep" rmdir /s /q "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep\ric-dep"
 cd "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep" >nul 2>&1
 if not errorlevel 1 (
-    git clone https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git
+    git clone https://github.com/gunboss/ric-plt-ric-dep.git
     cd "ric-dep"
     git checkout d9298b0865b69847c2ed0885f5077e703e5a6638
     cd ..\..\..\..

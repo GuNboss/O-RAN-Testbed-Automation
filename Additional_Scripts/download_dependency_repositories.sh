@@ -80,7 +80,7 @@ wget -qO zmq_channel_emulator/multi_ue_scenario.grc.license "https://gitlab.com/
 cd ..
 
 cd RAN_Intelligent_Controllers/Near-Real-Time-RIC
-./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git --https
+./install_scripts/git_clone.sh https://github.com/gunboss/ric-plt-ric-dep.git --https
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/sim/e2-interface.git --https
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/ric-plt/appmgr.git --https
 mkdir -p xApps
@@ -98,13 +98,13 @@ cd xApps
 cd ../../..
 
 cd RAN_Intelligent_Controllers/Non-Real-Time-RIC
-./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/it/dep.git --https
+./install_scripts/git_clone.sh https://github.com/gunboss/it-dep.git --https
 cd dep
 git restore --source=HEAD :/
 cd ..
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/nonrtric/plt/rappmanager.git --https
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git dep/ranpm --https
-./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git dep/ric-dep --https
+./install_scripts/git_clone.sh https://github.com/gunboss/ric-plt-ric-dep.git dep/ric-dep --https
 ./install_scripts/git_clone.sh https://github.com/onap/multicloud-k8s.git dep/smo-install/multicloud-k8s
 ./install_scripts/git_clone.sh https://gerrit.onap.org/r/oom.git dep/smo-install/onap_oom --https
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/portal/nonrtric-controlpanel.git --https

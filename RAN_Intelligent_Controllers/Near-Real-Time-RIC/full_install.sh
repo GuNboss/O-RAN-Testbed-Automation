@@ -152,7 +152,7 @@ else
 
     # Download ric-dep from gerrit
     if [ ! -d "ric-dep" ]; then
-        ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git ric-dep --https
+        ./install_scripts/git_clone.sh https://github.com/gunboss/ric-plt-ric-dep.git ric-dep --https
         # Configure the SCTP E2 termination port (not idempotent so only on first clone)
         if [ "$E2_TERM_PORT" != "36422" ]; then # Default port
             echo "Configuring E2 Termination Port to $E2_TERM_PORT..."
@@ -291,7 +291,7 @@ else
 
     # Download ric-dep from gerrit
     if [ ! -d "ric-dep" ]; then
-        ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep.git ric-dep --https
+        ./install_scripts/git_clone.sh https://github.com/gunboss/ric-plt-ric-dep.git ric-dep --https
         # Configure the SCTP E2 termination port (not idempotent so only on first clone)
         if [ "$E2_TERM_PORT" != "36422" ]; then # Default port
             echo "Configuring E2 Termination Port to $E2_TERM_PORT..."
