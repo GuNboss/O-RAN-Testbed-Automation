@@ -37,6 +37,12 @@ if ! command -v realpath &>/dev/null; then
     sudo env $APTVARS apt-get install -y coreutils
 fi
 
+# Required to package the sample rApps (.csar)
+if ! command -v zip &>/dev/null; then
+    echo "Package \"zip\" not found, installing..."
+    sudo env $APTVARS apt-get install -y zip
+fi
+
 CURRENT_DIR=$(pwd)
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 cd "$SCRIPT_DIR"
@@ -353,7 +359,7 @@ echo "Installing Non-Real-Time RAN Intelligent Controller (O-RAN SC)..."
 echo "Checking if any of the nonrtric pods are not running..."
 SHOULD_RESET_NONRTRIC=false
 if [ "$SHOULD_RESET_NONRTRIC" = false ]; then
-    POD_NAMES=("a1-sim-osc" "a1-sim-std" "a1-sim-std2" "a1controller" "capifcore" "db" "dmaapadapterservice" "dmaapmediatorservice" "helmmanager" "orufhrecovery" "policymanagementservice" "ransliceassurance" "rappcatalogueenhancedservice" "rappcatalogueservice" "rappmanager")
+    POD_NAMES=("a1-sim-osc" "a1-sim-std" "a1-sim-std2" "capifcore" "controlpanel" "dmaapadapterservice" "dmeparticipant" "informationservice" "nonrtricgateway" "oran-nonrtric-kong" "oran-nonrtric-postgresql" "policymanagementservice" "rappmanager" "servicemanager" "topology")
     ALL_PODS=$(kubectl get pods -n nonrtric --no-headers 2>/dev/null) || true
 
     for POD_NAME in "${POD_NAMES[@]}"; do

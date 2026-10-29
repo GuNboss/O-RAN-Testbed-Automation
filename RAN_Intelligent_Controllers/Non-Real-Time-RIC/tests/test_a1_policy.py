@@ -116,7 +116,23 @@ def delete_policy_if_exists(policy_id):
         print(f'Policy {policy_id} exists, deleting it...')
         delete_policy = requests.delete(f'http://{pms_ip}:{pms_port}/a1-policy/v2/policies/{policy_id}')
         print(f'Console command: curl -X DELETE http://{pms_ip}:{pms_port}/a1-policy/v2/policies/{policy_id}')
-        assert delete_policy.status_code == 200, f'Delete policy status code: {delete_policy.status_code}'
+        assert delete_policy.status_code == 200 or delete_policy.status_code == 204, f'Delete policy status code: {delete_policy.status_code}'
+
+# Build a minimal instance that satisfies the required fields of a JSON schema
+def build_sample_from_schema(schema):
+    if 'default' in schema:
+        return schema['default']
+    schema_type = schema.get('type')
+    if schema_type == 'object':
+        properties = schema.get('properties', {})
+        return {key: build_sample_from_schema(properties.get(key, {})) for key in schema.get('required', [])}
+    if schema_type == 'array':
+        return []
+    if schema_type in ('integer', 'number'):
+        return 1
+    if schema_type == 'boolean':
+        return False
+    return 'test'
 
 ################################################################################
 # Test the creation of a policy
@@ -130,13 +146,20 @@ def test_create_service_policy():
         policy_types = ric[1]
         if len(policy_types) > 0:
             for policy_type in policy_types:
-                if policy_type is not None:
+                if policy_type:
                     supported_policy_types.append(policy_type)
                     supported_policy_types_ric.append(ric_id)
     
     assert len(supported_policy_types) > 0, 'No supported policy types found'
     print(f'Supported policy types: {supported_policy_types}')
-    
+
+    # The policy data must satisfy the schema of the policy type, otherwise PMS rejects it (400)
+    policy_type_response = requests.get(f'http://{pms_ip}:{pms_port}/a1-policy/v2/policy-types/{supported_policy_types[0]}')
+    assert policy_type_response.status_code == 200, f'Policy type status code: {policy_type_response.status_code}'
+    policy_schema = json.loads(policy_type_response.text).get('policy_schema', {})
+    sample_policy_data = build_sample_from_schema(policy_schema)
+    print(f'Policy data for type {supported_policy_types[0]}: {sample_policy_data}')
+
     policy_id=123456
     service_id=654321
     policy_data = {
@@ -144,7 +167,7 @@ def test_create_service_policy():
         'policy_id': policy_id,
         'transient': False,
         'service_id': service_id,
-        'policy_data': {},
+        'policy_data': sample_policy_data,
         'status_notification_uri': '',
         'policytype_id': supported_policy_types[0]
     }
