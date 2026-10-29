@@ -20,7 +20,7 @@
   "https://github.com/gunboss/it-dep.git": ["master", "60372089116269f82038c0fe38a02acbc51fb269"],
   "https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git": ["master", "dbb29d3eb620b0ed223510590030a9a4a3c73d50"],
   "https://github.com/onap/multicloud-k8s.git": ["", "8bea0a13c223aff43f98f0cb6426379bb23e8894"],
-  "https://gerrit.onap.org/r/oom.git": ["", "c6ddebbd61e755f078d97483a4efec6189e4d756"],
+  "https://github.com/onap/oom.git": ["", "c6ddebbd61e755f078d97483a4efec6189e4d756"],
   "https://gerrit.o-ran-sc.org/r/portal/nonrtric-controlpanel.git": ["master", "15bdaf8f25dca54e3a52ad30d69fa2eb1d59ce48"],
   "https://gerrit.o-ran-sc.org/r/nonrtric/plt/rappmanager.git": ["j-release", "ffd5b45b53572ae42fbc22510bcbe3ad8883b86f"],
   "https://gitlab.eurecom.fr/oai/openairinterface5g.git": ["develop", "acb982d0bd96b01dee84aea730f01dfff73875d0"],

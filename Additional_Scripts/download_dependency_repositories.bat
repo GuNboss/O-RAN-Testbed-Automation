@@ -352,7 +352,7 @@ cd %~dp0..
 if exist "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep\smo-install\onap_oom" rmdir /s /q "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep\smo-install\onap_oom"
 cd "RAN_Intelligent_Controllers\Non-Real-Time-RIC\dep\smo-install" >nul 2>&1
 if not errorlevel 1 (
-    git clone https://gerrit.onap.org/r/oom.git
+    git clone https://github.com/onap/oom.git
     cd "onap_oom"
     git checkout bb650a828c4f78dbbe596b5b1145fd92d14058ce
     cd ..\..\..\..\..

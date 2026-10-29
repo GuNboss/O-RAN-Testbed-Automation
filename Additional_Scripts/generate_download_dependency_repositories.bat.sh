@@ -221,7 +221,7 @@ generate_commands "https://gerrit.o-ran-sc.org/r/nonrtric/plt/rappmanager.git" "
 generate_commands "https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep" "ranpm"
 generate_commands "https://github.com/gunboss/ric-plt-ric-dep.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep" "ric-dep"
 generate_commands "https://github.com/onap/multicloud-k8s.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep\\smo-install" "multicloud-k8s"
-generate_commands "https://gerrit.onap.org/r/oom.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep\\smo-install" "onap_oom"
+generate_commands "https://github.com/onap/oom.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC\\dep\\smo-install" "onap_oom"
 generate_commands "https://gerrit.o-ran-sc.org/r/portal/nonrtric-controlpanel.git" "RAN_Intelligent_Controllers\\Non-Real-Time-RIC" "nonrtric-controlpanel"
 echo "cd RAN_Intelligent_Controllers\\Non-Real-Time-RIC" >>download_dependency_repositories.bat
 echo "mkdir rApps" >>download_dependency_repositories.bat

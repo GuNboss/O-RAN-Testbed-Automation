@@ -106,7 +106,7 @@ cd ..
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/nonrtric/plt/ranpm.git dep/ranpm --https
 ./install_scripts/git_clone.sh https://github.com/gunboss/ric-plt-ric-dep.git dep/ric-dep --https
 ./install_scripts/git_clone.sh https://github.com/onap/multicloud-k8s.git dep/smo-install/multicloud-k8s
-./install_scripts/git_clone.sh https://gerrit.onap.org/r/oom.git dep/smo-install/onap_oom --https
+./install_scripts/git_clone.sh https://github.com/onap/oom.git dep/smo-install/onap_oom --https
 ./install_scripts/git_clone.sh https://gerrit.o-ran-sc.org/r/portal/nonrtric-controlpanel.git --https
 mkdir -p rApps
 cd ../..

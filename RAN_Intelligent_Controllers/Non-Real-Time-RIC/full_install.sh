@@ -157,7 +157,7 @@ if [ ! -d smo-install/onap_oom ] || [ -z "$(ls -A smo-install/onap_oom)" ]; then
     [ -d smo-install/onap_oom ] && rm -rf smo-install/onap_oom # Remove the directory if it is empty
     echo
     echo "Cloning dep/smo-install/onap_oom..."
-    ./../install_scripts/git_clone.sh https://gerrit.onap.org/r/oom.git smo-install/onap_oom --https
+    ./../install_scripts/git_clone.sh https://github.com/onap/oom.git smo-install/onap_oom --https
 fi
 
 echo
