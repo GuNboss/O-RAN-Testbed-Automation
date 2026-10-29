@@ -119,10 +119,21 @@ fi
 
 cd "$SCRIPT_DIR"
 
+# The A1 simulators start without policy types, which the A1 policy tests need
+if ! ./install_scripts/load_a1_sim_policy_types.sh; then
+    echo "WARNING: Could not load the A1 simulator policy types, the A1 policy tests may fail."
+fi
+
+TESTS_FAILED=false
 if ! pytest tests/ -s; then
+    TESTS_FAILED=true
     echo
     echo "Non-RT RIC was successfully installed but the tests failed. You can re-run the tests with ./run_tests.sh."
 fi
 
 # Stop the sudo timeout refresher, it is no longer necessary to run
 ./install_scripts/stop_sudo_refresh.sh
+
+if [ "$TESTS_FAILED" = true ]; then
+    exit 1
+fi

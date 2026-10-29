@@ -449,7 +449,11 @@ if ! ./run_tests.sh; then
     echo "Some of the Non-RT RIC tests failed. Waiting for pods, then retrying..."
     sleep 30
     sudo ./install_scripts/wait_for_nonrtric_pods.sh
-    ./run_tests.sh
+    if ./run_tests.sh; then
+        echo "Successfully passed the tests on retry; the Non-RT RIC is functional."
+    else
+        echo "WARNING: The Non-RT RIC tests failed again. You can re-run the tests with ./run_tests.sh."
+    fi
 else
     echo "Successfully passed the tests; the Non-RT RIC is functional."
 fi
